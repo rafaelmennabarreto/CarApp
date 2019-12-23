@@ -40,10 +40,7 @@ class _CadastrarmanutencaoState extends State<Cadastrarmanutencao> {
   }
 
   formulario() => Container(
-        height: MediaQuery.of(context).size.height * 0.86,
         child: Column(
-          mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             Column(
               children: <Widget>[
@@ -76,7 +73,7 @@ class _CadastrarmanutencaoState extends State<Cadastrarmanutencao> {
             ),
             ButtonTheme(
                 child: Padding(
-              padding: EdgeInsets.fromLTRB(5, 15, 5, 0),
+              padding: EdgeInsets.fromLTRB(5, 25, 5, 0),
               child: MaterialButton(
                 onPressed: () => {},
                 minWidth: MediaQuery.of(context).size.width,
