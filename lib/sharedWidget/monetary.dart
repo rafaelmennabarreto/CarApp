@@ -5,13 +5,11 @@ import 'package:flutter_masked_text/flutter_masked_text.dart';
 import '../pallet.dart';
 
 class InputMonetary extends StatefulWidget {
-  InputMonetary({
-    this.onchange,
-    this.label = '',
-  });
+  InputMonetary({this.onchange, this.label = '', this.icon});
 
   final String label;
   final Function(String text) onchange;
+  final IconData icon;
 
   @override
   InputMonetaryState createState() => InputMonetaryState();
@@ -44,7 +42,9 @@ class InputMonetaryState extends State<InputMonetary> {
                 inputFormatters: <TextInputFormatter>[
                   WhitelistingTextInputFormatter.digitsOnly
                 ],
-                decoration: InputDecoration(focusedBorder: borderActive))
+                decoration: InputDecoration(
+                    focusedBorder: borderActive,
+                    icon: widget.icon != null ? Icon(widget.icon) : null))
           ],
         ));
   }

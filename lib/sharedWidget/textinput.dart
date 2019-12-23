@@ -2,11 +2,20 @@ import 'package:carapp/pallet.dart';
 import 'package:flutter/material.dart';
 
 class Input extends StatefulWidget {
-  Input({this.placeholder, this.onchange, this.label = ''});
+  Input(
+      {this.placeholder,
+      this.onchange,
+      this.label = '',
+      this.readOnly = false,
+      this.onTap,
+      this.icon});
 
   final String placeholder;
   final String label;
   final Function(String text) onchange;
+  final bool readOnly;
+  final Function onTap;
+  final IconData icon;
 
   @override
   _InputState createState() => _InputState();
@@ -30,8 +39,12 @@ class _InputState extends State<Input> {
             ),
             TextFormField(
                 onChanged: (String text) => widget.onchange(text),
+                readOnly: widget.readOnly,
+                onTap: () => widget.onTap(),
                 decoration: InputDecoration(
-                    hintText: widget.placeholder, focusedBorder: borderActive))
+                    hintText: widget.placeholder,
+                    focusedBorder: borderActive,
+                    icon: widget.icon != null ? Icon(widget.icon) : null))
           ],
         ));
   }
