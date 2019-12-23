@@ -36,8 +36,20 @@ class _CadastrarmanutencaoState extends State<Cadastrarmanutencao> {
       body: SingleChildScrollView(
         child: formulario(),
       ),
+      persistentFooterButtons: <Widget>[bottomButton()],
     );
   }
+
+  bottomButton() => ButtonTheme(
+          child: Padding(
+        padding: EdgeInsets.fromLTRB(5, 0, 5, 0),
+        child: MaterialButton(
+          onPressed: () => print('salvou'),
+          minWidth: MediaQuery.of(context).size.width,
+          color: Pallet.primaryColor,
+          child: Text("Salvar"),
+        ),
+      ));
 
   formulario() => Container(
         child: Column(
@@ -71,16 +83,6 @@ class _CadastrarmanutencaoState extends State<Cadastrarmanutencao> {
                 ),
               ],
             ),
-            ButtonTheme(
-                child: Padding(
-              padding: EdgeInsets.fromLTRB(5, 25, 5, 0),
-              child: MaterialButton(
-                onPressed: () => {},
-                minWidth: MediaQuery.of(context).size.width,
-                color: Colors.red,
-                child: Text("Salvar"),
-              ),
-            )),
           ],
         ),
       );

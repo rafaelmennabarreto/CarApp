@@ -40,7 +40,7 @@ class _InputState extends State<Input> {
             TextFormField(
                 onChanged: (String text) => widget.onchange(text),
                 readOnly: widget.readOnly,
-                onTap: () => widget.onTap(),
+                onTap: () => widget.onTap != null ? widget.onTap() : null,
                 decoration: InputDecoration(
                     hintText: widget.placeholder,
                     focusedBorder: borderActive,
