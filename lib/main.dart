@@ -1,7 +1,5 @@
-import 'package:carapp/pallet.dart';
+import 'package:carapp/login/login.dart';
 import 'package:flutter/material.dart';
-
-import 'home/home.dart';
 
 void main() => runApp(MyApp());
 
@@ -14,7 +12,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blueGrey,
       ),
-      home: HomeScreen(),
+      home: Login(),
     );
   }
 }
